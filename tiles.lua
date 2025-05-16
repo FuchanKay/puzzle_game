@@ -1,4 +1,4 @@
-Tiles = Object:extend()
+Tiles = {}
 
 function Tiles:init()
 end

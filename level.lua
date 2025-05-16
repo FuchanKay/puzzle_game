@@ -1,4 +1,4 @@
-Level = Object:extend()
+Level = {}
 require "tiles"
 
 function Level:init(width, height)
