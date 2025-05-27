@@ -4,7 +4,7 @@ function Tiles:init()
 end
 
 Tiles.empty = function()
-    local stack = {}
+    local stack = {char = false}
 
 
     return stack
