@@ -1,9 +1,6 @@
 Tiles = {}
 
-function Tiles:init()
-end
-
-Tiles.empty = function()
+local function newStack()
     local stack = {}
     function stack:remove(id)
         for i, obj in ipairs(stack) do
@@ -27,5 +24,33 @@ Tiles.empty = function()
     function stack:add(obj)
         table.insert(stack, obj)
     end
+
+    function stack:replace(tile)
+        stack = tile
+    end
+
     return stack
 end
+
+Tiles.empty = function()
+    return newStack()
+end
+
+Tiles.wall = function()
+    local stack = newStack()
+    stack:add({id = "wall"})
+    return stack
+end
+
+Tiles.stairs = function()
+    local stack = newStack()
+    stack:add({id = "stairs"})
+    return stack
+end
+
+Tiles.hole = function()
+    local stack = newStack()
+    stack:add({id = "hole"})
+    return stack
+end
+

@@ -35,11 +35,13 @@ function love.load()
     stage:add(9, 3, 1, Tiles.empty())
     stage:add(10, 3, 1, Tiles.empty())
     stage:add(11, 3, 1, Tiles.empty())
+    stage:get(1, 2, 1):replace(Tiles.stairs())
     for i = 1, 5 do
         for j = 1, 5 do
             stage:add(i - 1, j - 1, 2, Tiles.empty())
         end
     end
+    stage:get(1, 3, 2):replace(Tiles.hole())
     stage:add(5, 4, 2, Tiles.empty())
     stage:add(6, 4, 2, Tiles.empty())
     stage:add(6, 3, 2, Tiles.empty())
@@ -49,10 +51,6 @@ function love.load()
     stage:add(10, 3, 2, Tiles.empty())
     stage:add(11, 3, 2, Tiles.empty())
     stage:add(12, 3, 2, Tiles.empty())
-    stage:get(11, 3, 2):add({id = "hole"})
-
-
-
     stage:addChar(3, 3, 1)
     stage:addChar(3, 3, 2)
 end
